@@ -35,11 +35,11 @@ resource "aws_subnet" "public" {
 data "aws_availability_zones" "available" {}
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = data.aws_vpc.main.id
 }
 
 resource "aws_route_table" "public" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = data.aws_vpc.main.id
 }
 
 resource "aws_route" "default_route" {
@@ -55,7 +55,7 @@ resource "aws_route_table_association" "public_assoc" {
 }
 
 resource "aws_security_group" "ecs_sg" {
-  vpc_id = aws_vpc.main.id
+  vpc_id = data.aws_vpc.main.id
 
   ingress {
     from_port   = var.container_port
