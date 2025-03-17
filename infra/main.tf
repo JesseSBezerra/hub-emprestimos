@@ -17,14 +17,14 @@ provider "aws" {
   region = var.region
 }
 
-data "aws_vpc" "main" {
-  id = "vpc-098b96aa7289bc7d9"
+resource "aws_vpc" "main" {
+  cidr_block = "10.0.0.1/16"
 }
 
 resource "aws_subnet" "public" {
   count                   = 2
-  vpc_id                  = data.aws_vpc.main.id
-  cidr_block              = cidrsubnet(data.aws_vpc.main.cidr_block, 8, count.index)
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = cidrsubnet(aws_vpc.main.cidr_block, 8, count.index)
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[count.index]
 }
@@ -32,11 +32,11 @@ resource "aws_subnet" "public" {
 data "aws_availability_zones" "available" {}
 
 resource "aws_internet_gateway" "igw" {
-  vpc_id = data.aws_vpc.main.id
+  vpc_id = aws_vpc.main.id
 }
 
 resource "aws_route_table" "public" {
-  vpc_id = data.aws_vpc.main.id
+  vpc_id = aws_vpc.main.id
 }
 
 resource "aws_route" "default_route" {
@@ -52,7 +52,7 @@ resource "aws_route_table_association" "public_assoc" {
 }
 
 resource "aws_security_group" "ecs_sg" {
-  vpc_id = data.aws_vpc.main.id
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port   = var.container_port
