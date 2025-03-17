@@ -19,8 +19,13 @@ provider "aws" {
 
 data "aws_vpc" "main" {
   filter {
-    name   = "lancamentos"
+    name   = "cidr-block"
     values = ["10.0.0.0/16"]
+  }
+
+  filter {
+    name   = "name"
+    values = ["lancamentos"]
   }
 
 }
