@@ -23,6 +23,9 @@ public class DynamoDBConfig {
         return DynamoDBMapperConfig.DEFAULT;
     }
 
+    /*
+    teste
+     */
 
     @Bean
     @Primary
