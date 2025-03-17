@@ -18,16 +18,7 @@ provider "aws" {
 }
 
 data "aws_vpc" "main" {
-  filter {
-    name   = "cidr-block"
-    values = ["10.0.0.0/16"]
-  }
-
-  filter {
-    name   = "name"
-    values = ["lancamentos"]
-  }
-
+  id = "vpc-098b96aa7289bc7d9"
 }
 
 resource "aws_subnet" "public" {
