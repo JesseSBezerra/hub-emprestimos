@@ -1,7 +1,7 @@
-package br.com.jdsb.hubemprestimos.mapper;
+package br.com.jdsb.hub.mapper;
 
-import br.com.jdsb.hubemprestimos.entity.LancamentoEntity;
-import br.com.jdsb.hublancamentos.avro.LancamentoEvent;
+import br.com.jdsb.hub.avro.LancamentoEvent;
+import br.com.jdsb.hub.entity.LancamentoEntity;
 
 public class LancamentoMapper {
 

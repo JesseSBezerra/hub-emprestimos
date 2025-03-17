@@ -1,9 +1,9 @@
-package br.com.jdsb.hubemprestimos.service;
+package br.com.jdsb.hub.service;
 
-import br.com.jdsb.hubemprestimos.entity.LancamentoEntity;
-import br.com.jdsb.hubemprestimos.mapper.LancamentoMapper;
-import br.com.jdsb.hubemprestimos.repository.LancamentoRepository;
-import br.com.jdsb.hublancamentos.avro.LancamentoEvent;
+import br.com.jdsb.hub.avro.LancamentoEvent;
+import br.com.jdsb.hub.entity.LancamentoEntity;
+import br.com.jdsb.hub.mapper.LancamentoMapper;
+import br.com.jdsb.hub.repository.LancamentoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

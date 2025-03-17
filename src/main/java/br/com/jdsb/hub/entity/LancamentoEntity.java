@@ -1,4 +1,4 @@
-package br.com.jdsb.hubemprestimos.entity;
+package br.com.jdsb.hub.entity;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;

@@ -1,7 +1,7 @@
-package br.com.jdsb.hubemprestimos.config;
+package br.com.jdsb.hub.config;
 
 
-import br.com.jdsb.hublancamentos.avro.LancamentoEvent;
+import br.com.jdsb.hub.avro.LancamentoEvent;
 import io.confluent.kafka.serializers.KafkaAvroDeserializer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
